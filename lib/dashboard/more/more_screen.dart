@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:stream_global/app/dimens.dart';
 
 import '../../app/assets.dart';
+import '../../app/routes.dart';
 import '../../app/widgets/profile_avatar.dart';
 
 typedef _MoreItem = (String, String, bool);
@@ -104,7 +105,10 @@ class _MoreHeader extends StatelessWidget {
             flex: 35,
             child: FittedBox(
               child: TextButton.icon(
-                onPressed: () {},
+                onPressed: () => Navigator.pushNamed(
+                  context,
+                  AppRoutes.editProfile,
+                ),
                 style: TextButton.styleFrom(
                   foregroundColor: theme.colorScheme.onPrimary,
                   textStyle: const TextStyle(

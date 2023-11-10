@@ -88,10 +88,6 @@ class AppTheme {
           borderRadius: BorderRadius.circular(AppDimens.secondaryPadding / 2),
           borderSide: const BorderSide(color: AppColors.textFieldBorder),
         ),
-        disabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(AppDimens.secondaryPadding / 2),
-          borderSide: const BorderSide(color: AppColors.disabledColor),
-        ),
         hintStyle: const TextStyle(color: AppColors.textFieldHint),
         contentPadding: const EdgeInsets.all(AppDimens.secondaryPadding),
         filled: true,

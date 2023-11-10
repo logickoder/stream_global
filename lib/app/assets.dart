@@ -21,6 +21,7 @@ class AppAssets {
   static const logoutIcon = '$_icons/logout.svg';
   static const historyIcon = '$_icons/history.svg';
   static const downloadIcon = '$_icons/download.svg';
+  static const cameraIcon = '$_icons/camera.svg';
 
   static const homeIcon = '$_icons/home.svg';
   static const exploreIcon = '$_icons/explore.svg';
