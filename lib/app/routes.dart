@@ -6,6 +6,7 @@ import '../auth/auth_otp_screen.dart';
 import '../auth/auth_screen.dart';
 import '../auth/auth_type.dart';
 import '../dashboard/dashboard_screen.dart';
+import '../help/help_screen.dart';
 import '../notification/notifications_screen.dart';
 import '../onboarding/onboarding_screen.dart';
 import '../profile/edit/edit_profile_screen.dart';
@@ -24,6 +25,7 @@ class AppRoutes {
   static const notifications = '/notifications';
   static const settings = '/settings';
   static const about = '/about';
+  static const help = '/help';
 
   static Map<String, Widget Function(BuildContext)> get current => {
         splash: (context) => const SplashScreen(),
@@ -37,5 +39,6 @@ class AppRoutes {
         notifications: (_) => const NotificationsScreen(),
         settings: (_) => const SettingsScreen(),
         about: (_) => const AboutScreen(),
+        help: (_) => const HelpScreen(),
       };
 }
