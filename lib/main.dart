@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'app/routes.dart';
 import 'app/theme.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(const ProviderScope(child: MainApp()));
 }
 
 class MainApp extends StatelessWidget {
@@ -21,7 +22,7 @@ class MainApp extends StatelessWidget {
       ),
     );
     return MaterialApp(
-      title: 'Stream Global',
+      title: 'Streamglobal',
       theme: theme,
       routes: AppRoutes.current,
       debugShowCheckedModeBanner: false,

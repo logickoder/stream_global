@@ -10,8 +10,8 @@ class OnboardingPage extends StatelessWidget {
   final int index;
   final int length;
   final String buttonText;
-  final VoidCallback? onPressed;
-  final VoidCallback? onSkip;
+  final VoidCallback? onButtonPressed;
+  final VoidCallback? onSkipPressed;
 
   const OnboardingPage({
     super.key,
@@ -21,8 +21,8 @@ class OnboardingPage extends StatelessWidget {
     required this.index,
     required this.length,
     this.buttonText = 'Next',
-    this.onPressed,
-    this.onSkip,
+    this.onButtonPressed,
+    this.onSkipPressed,
   });
 
   @override
@@ -35,7 +35,7 @@ class OnboardingPage extends StatelessWidget {
         Align(
           alignment: Alignment.topRight,
           child: TextButton(
-            onPressed: onSkip,
+            onPressed: onSkipPressed,
             child: Text(
               'Skip',
               style: TextStyle(color: theme.colorScheme.inversePrimary),
@@ -73,7 +73,7 @@ class OnboardingPage extends StatelessWidget {
         FractionallySizedBox(
           widthFactor: 0.558,
           child: FilledButton(
-            onPressed: onPressed,
+            onPressed: onButtonPressed,
             child: Text(buttonText),
           ),
         ),
