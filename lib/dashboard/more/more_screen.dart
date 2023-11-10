@@ -53,10 +53,13 @@ class MoreScreen extends StatelessWidget {
   }
 
   void _handleClick(BuildContext context, _MoreItem item) {
-    switch (item.$2) {
-      case AppAssets.notificationIcon:
-        Navigator.pushNamed(context, AppRoutes.notifications);
-        break;
+    final route = switch (item.$2) {
+      AppAssets.notificationIcon => AppRoutes.notifications,
+      AppAssets.settingIcon => AppRoutes.settings,
+      _ => null,
+    };
+    if (route != null) {
+      Navigator.pushNamed(context, route);
     }
   }
 }

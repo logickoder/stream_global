@@ -8,6 +8,7 @@ import '../dashboard/dashboard_screen.dart';
 import '../notification/notifications_screen.dart';
 import '../onboarding/onboarding_screen.dart';
 import '../profile/edit/edit_profile_screen.dart';
+import '../settings/settings_screen.dart';
 import '../splash/splash_screen.dart';
 
 class AppRoutes {
@@ -20,6 +21,7 @@ class AppRoutes {
   static const dashboard = '/dashboard';
   static const editProfile = '/profile/edit';
   static const notifications = '/notifications';
+  static const settings = '/settings';
 
   static Map<String, Widget Function(BuildContext)> get current => {
         splash: (context) => const SplashScreen(),
@@ -31,5 +33,6 @@ class AppRoutes {
         dashboard: (_) => const DashboardScreen(),
         editProfile: (_) => const EditProfileScreen(),
         notifications: (_) => const NotificationsScreen(),
+        settings: (_) => const SettingsScreen(),
       };
 }
