@@ -6,6 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../app/assets.dart';
 import '../app/dimens.dart';
 import '../app/routes.dart';
+import '../app/utils/strings.dart';
 import 'auth_screen_controller.dart';
 import 'auth_screen_state.dart';
 import 'auth_type.dart';
@@ -80,6 +81,9 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your email address';
                     }
+                    if (!emailRegex.hasMatch(value)) {
+                      return 'Please enter a valid email address';
+                    }
                     return null;
                   },
                 ),
@@ -145,36 +149,30 @@ class _AuthScreenState extends ConsumerState<AuthScreen> {
   }
 
   void _submitForm() {
-    if (_form.currentState!.validate()) {
-      // hide the keyboard so errors can be seen
-      FocusScope.of(context).unfocus();
-      ref
-          .read(_controller.notifier)
-          .submit(
-            email: _emailController.text,
-            username: _usernameController.text,
-            type: widget.type,
-          )
-          .then((value) {
-        if (!value) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(
-                ref.read(_controller).error ?? 'An error occurred',
-              ),
-            ),
-          );
-        } else {
-          // Navigator.pushNamedAndRemoveUntil(
-          //   context,
-          //   widget.type == AuthScreenType.reset
-          //       ? AppRoutes.login
-          //       : AppRoutes.landing,
-          //   (route) => false,
-          // );
-        }
-      });
+    // cancel if the form is not valid
+    if (_form.currentState?.validate() != true) {
+      return;
     }
+    // hide the keyboard so errors can be seen
+    FocusScope.of(context).unfocus();
+    final action = ref.read(_controller.notifier).submit(
+          email: _emailController.text,
+          username: _usernameController.text,
+          type: widget.type,
+        );
+    action.then((value) {
+      if (!value) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              ref.read(_controller).error ?? 'An error occurred',
+            ),
+          ),
+        );
+      } else {
+        Navigator.pushNamed(context, AppRoutes.otp);
+      }
+    });
   }
 
   /// Returns the title based on [widget.type].

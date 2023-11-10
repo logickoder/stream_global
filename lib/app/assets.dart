@@ -6,6 +6,8 @@ class AppAssets {
   static const facebookIcon = '$_icons/facebook.svg';
   static const googleIcon = '$_icons/google.svg';
   static const appleIcon = '$_icons/apple.svg';
+  static const otpIcon = '$_icons/otp.svg';
+  static const verified = '$_icons/verified.svg';
 
   /// Images
   static const _images = '$_root/images';
