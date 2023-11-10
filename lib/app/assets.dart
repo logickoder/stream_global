@@ -22,6 +22,8 @@ class AppAssets {
   static const historyIcon = '$_icons/history.svg';
   static const downloadIcon = '$_icons/download.svg';
   static const cameraIcon = '$_icons/camera.svg';
+  static const churchIcon = '$_icons/church.svg';
+  static const prayerIcon = '$_icons/prayer.svg';
 
   static const homeIcon = '$_icons/home.svg';
   static const exploreIcon = '$_icons/explore.svg';
@@ -36,5 +38,6 @@ class AppAssets {
   static const onboarding2 = '$_images/onboarding_2.png';
   static const onboarding3 = '$_images/onboarding_3.png';
   static const authChooserImage = '$_images/auth_chooser_background.png';
+  static const aboutUsImage = '$_images/about_us_background.png';
   static const sermonImage = '$_images/sermon.png';
 }

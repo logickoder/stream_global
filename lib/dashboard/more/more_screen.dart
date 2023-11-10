@@ -56,6 +56,7 @@ class MoreScreen extends StatelessWidget {
     final route = switch (item.$2) {
       AppAssets.notificationIcon => AppRoutes.notifications,
       AppAssets.settingIcon => AppRoutes.settings,
+      AppAssets.infoIcon => AppRoutes.about,
       _ => null,
     };
     if (route != null) {

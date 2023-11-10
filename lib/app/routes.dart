@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../about/about_screen.dart';
 import '../auth/auth_chooser_screen.dart';
 import '../auth/auth_otp_screen.dart';
 import '../auth/auth_screen.dart';
@@ -22,6 +23,7 @@ class AppRoutes {
   static const editProfile = '/profile/edit';
   static const notifications = '/notifications';
   static const settings = '/settings';
+  static const about = '/about';
 
   static Map<String, Widget Function(BuildContext)> get current => {
         splash: (context) => const SplashScreen(),
@@ -34,5 +36,6 @@ class AppRoutes {
         editProfile: (_) => const EditProfileScreen(),
         notifications: (_) => const NotificationsScreen(),
         settings: (_) => const SettingsScreen(),
+        about: (_) => const AboutScreen(),
       };
 }
