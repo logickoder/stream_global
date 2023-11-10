@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../app/assets.dart';
-import '../../app/dimens.dart';
+import '../app/assets.dart';
+import '../app/dimens.dart';
+import '../app/routes.dart';
 
 class AuthChooserScreen extends StatelessWidget {
   const AuthChooserScreen({super.key});
@@ -57,7 +58,10 @@ class AuthChooserScreen extends StatelessWidget {
                         backgroundColor: theme.colorScheme.surface,
                         foregroundColor: theme.colorScheme.onSurface,
                       ),
-                      onPressed: () {},
+                      onPressed: () => Navigator.pushNamed(
+                        context,
+                        AppRoutes.register,
+                      ),
                       child: const Text('Sign me up'),
                     ),
                   ),
@@ -69,7 +73,10 @@ class AuthChooserScreen extends StatelessWidget {
                         foregroundColor: theme.colorScheme.surface,
                         side: BorderSide(color: theme.colorScheme.surface),
                       ),
-                      onPressed: () {},
+                      onPressed: () => Navigator.pushNamed(
+                        context,
+                        AppRoutes.login,
+                      ),
                       child: const Text('Already have an account'),
                     ),
                   ),
@@ -87,7 +94,7 @@ class AuthChooserScreen extends StatelessWidget {
               ),
             )
           ],
-        ) /* add child content here */,
+        ),
       ),
     );
   }

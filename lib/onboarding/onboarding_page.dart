@@ -36,10 +36,7 @@ class OnboardingPage extends StatelessWidget {
           alignment: Alignment.topRight,
           child: TextButton(
             onPressed: onSkipPressed,
-            child: Text(
-              'Skip',
-              style: TextStyle(color: theme.colorScheme.inversePrimary),
-            ),
+            child: const Text('Skip'),
           ),
         ),
         const Spacer(flex: 1),

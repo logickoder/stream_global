@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../app/assets.dart';
+import '../app/data/services/onboarding_service.dart';
 import '../app/dimens.dart';
 import '../app/routes.dart';
 
@@ -54,13 +55,14 @@ class SplashScreen extends StatelessWidget {
   }
 
   Future<String> _getStartRoute() async {
-    // if (!(await OnboardingService.hasUserOnboarded())) {
-    //   return AppRoutes.onboarding;
-    // } else if ((await UserService.getUser()) == null) {
+    if (!(await OnboardingService.hasUserOnboarded())) {
+      return AppRoutes.onboarding;
+    }
+    // else if ((await UserService.getUser()) == null) {
     //   return AppRoutes.login;
-    // } else {
-    //   return AppRoutes.landing;
     // }
-    return AppRoutes.onboarding;
+    else {
+      return AppRoutes.login;
+    }
   }
 }

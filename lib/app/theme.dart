@@ -19,10 +19,7 @@ class AppTheme {
       displayColor: AppColors.text,
     );
 
-    const buttonPadding = EdgeInsets.symmetric(
-      horizontal: AppDimens.padding / 2,
-      vertical: AppDimens.secondaryPadding / 2,
-    );
+    const buttonPadding = EdgeInsets.all(AppDimens.padding / 2);
 
     final buttonShape = RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(AppDimens.secondaryPadding / 2),
@@ -76,6 +73,7 @@ class AppTheme {
         style: TextButton.styleFrom(
           padding: buttonPadding,
           shape: buttonShape,
+          foregroundColor: colorScheme.inversePrimary,
         ),
       ),
       outlinedButtonTheme: OutlinedButtonThemeData(
@@ -96,6 +94,8 @@ class AppTheme {
         ),
         hintStyle: const TextStyle(color: AppColors.textFieldHint),
         contentPadding: const EdgeInsets.all(AppDimens.secondaryPadding),
+        filled: true,
+        fillColor: AppColors.textFieldBackground,
       ),
     );
   }

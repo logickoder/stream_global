@@ -1,0 +1,1 @@
+enum AuthScreenType { login, register }
