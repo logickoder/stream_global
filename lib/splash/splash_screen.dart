@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../app/assets.dart';
 import '../app/dimens.dart';
+import '../app/routes.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
@@ -11,9 +12,9 @@ class SplashScreen extends StatelessWidget {
     final theme = Theme.of(context);
 
     // navigate to onboarding screen after 1000ms
-    // Future.delayed(const Duration(milliseconds: 1000), () async {
-    //   Navigator.pushReplacementNamed(context, await _getStartRoute());
-    // });
+    Future.delayed(const Duration(milliseconds: 1000), () async {
+      Navigator.pushReplacementNamed(context, await _getStartRoute());
+    });
 
     return Scaffold(
       backgroundColor: theme.colorScheme.primary,
@@ -52,13 +53,14 @@ class SplashScreen extends StatelessWidget {
     );
   }
 
-// Future<String> _getStartRoute() async {
-//   if (!(await OnboardingService.hasUserOnboarded())) {
-//     return AppRoutes.onboarding;
-//   } else if ((await UserService.getUser()) == null) {
-//     return AppRoutes.login;
-//   } else {
-//     return AppRoutes.landing;
-//   }
-// }
+  Future<String> _getStartRoute() async {
+    // if (!(await OnboardingService.hasUserOnboarded())) {
+    //   return AppRoutes.onboarding;
+    // } else if ((await UserService.getUser()) == null) {
+    //   return AppRoutes.login;
+    // } else {
+    //   return AppRoutes.landing;
+    // }
+    return AppRoutes.onboarding;
+  }
 }
