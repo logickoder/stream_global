@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../app/assets.dart';
+import 'home/home_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -20,7 +21,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
       body: IndexedStack(
         index: _index,
         children: const [
-          Center(child: Text('Home')),
+          HomeScreen(),
           Center(child: Text('Radio')),
           Center(child: Text('Sermons')),
           Center(child: Text('Explore')),

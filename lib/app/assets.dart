@@ -8,6 +8,8 @@ class AppAssets {
   static const appleIcon = '$_icons/apple.svg';
   static const otpIcon = '$_icons/otp.svg';
   static const verifiedIcon = '$_icons/verified.svg';
+  static const playIcon = '$_icons/play.svg';
+  static const musicIcon = '$_icons/music.svg';
 
   static const homeIcon = '$_icons/home.svg';
   static const exploreIcon = '$_icons/explore.svg';
@@ -22,4 +24,5 @@ class AppAssets {
   static const onboarding2 = '$_images/onboarding_2.png';
   static const onboarding3 = '$_images/onboarding_3.png';
   static const authChooserImage = '$_images/auth_chooser_background.png';
+  static const sermonImage = '$_images/sermon.png';
 }
