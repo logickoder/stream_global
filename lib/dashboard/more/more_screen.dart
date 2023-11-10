@@ -52,7 +52,13 @@ class MoreScreen extends StatelessWidget {
     );
   }
 
-  void _handleClick(BuildContext context, _MoreItem item) {}
+  void _handleClick(BuildContext context, _MoreItem item) {
+    switch (item.$2) {
+      case AppAssets.notificationIcon:
+        Navigator.pushNamed(context, AppRoutes.notifications);
+        break;
+    }
+  }
 }
 
 class _MoreHeader extends StatelessWidget {
