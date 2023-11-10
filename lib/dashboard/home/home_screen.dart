@@ -85,9 +85,11 @@ class _HomeAppBar extends StatelessWidget {
                 ],
               ),
             ),
-            const Expanded(
+            Expanded(
               flex: 14,
-              child: ProfileAvatar(),
+              child: ProfileAvatar(
+                borderColor: theme.colorScheme.inversePrimary,
+              ),
             )
           ],
         ),

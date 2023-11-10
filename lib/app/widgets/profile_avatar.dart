@@ -7,7 +7,8 @@ class ProfileAvatar extends StatelessWidget {
   const ProfileAvatar({
     super.key,
     this.size,
-    this.url,
+    this.url =
+        'https://img.freepik.com/free-photo/stylish-black-american-male-dressed-suit-grey-background_613910-1548.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699401600&semt=ais',
     this.borderColor,
     this.isFile = false,
   });
@@ -56,7 +57,7 @@ class _Avatar extends StatelessWidget {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         border: Border.all(
-          color: borderColor ?? Theme.of(context).colorScheme.inversePrimary,
+          color: borderColor ?? Colors.transparent,
           width: _borderSize,
         ),
       ),

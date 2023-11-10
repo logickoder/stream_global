@@ -44,5 +44,6 @@ class AppAssets {
   static const aboutUsImage = '$_images/about_us_background.png';
   static const helpImage = '$_images/help_background.png';
   static const donateImage = '$_images/donate_background.png';
+  static const logoutImage = '$_images/logout_background.png';
   static const sermonImage = '$_images/sermon.png';
 }

@@ -5,6 +5,7 @@ import 'package:stream_global/app/dimens.dart';
 import '../../app/assets.dart';
 import '../../app/routes.dart';
 import '../../app/widgets/profile_avatar.dart';
+import '../../auth/auth_logout_dialog.dart';
 
 typedef _MoreItem = (String, String, bool);
 
@@ -53,6 +54,14 @@ class MoreScreen extends StatelessWidget {
   }
 
   void _handleClick(BuildContext context, _MoreItem item) {
+    if (item.$2 == AppAssets.logoutIcon) {
+      showAdaptiveDialog(
+        context: context,
+        builder: (_) => const AuthLogoutDialog(),
+        barrierDismissible: false,
+      );
+      return;
+    }
     final route = switch (item.$2) {
       AppAssets.notificationIcon => AppRoutes.notifications,
       AppAssets.settingIcon => AppRoutes.settings,

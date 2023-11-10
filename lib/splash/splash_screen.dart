@@ -57,11 +57,7 @@ class SplashScreen extends StatelessWidget {
   Future<String> _getStartRoute() async {
     if (!(await OnboardingService.hasUserOnboarded())) {
       return AppRoutes.onboarding;
-    }
-    // else if ((await UserService.getUser()) == null) {
-    //   return AppRoutes.login;
-    // }
-    else {
+    } else {
       return AppRoutes.login;
     }
   }

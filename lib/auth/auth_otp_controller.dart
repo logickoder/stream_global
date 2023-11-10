@@ -11,14 +11,6 @@ class AuthOtpController extends AutoDisposeNotifier<AuthOtpState> {
   Future<void> sendOtp() async {
     try {
       state = state.copyWith(loading: true, error: null);
-      // final (success, message) = await OtpService.sendOtp(
-      //   email: state.email!,
-      //   school: state.school,
-      //   referralCode: state.referralCode,
-      // );
-      // if (!success) {
-      //   setError(message);
-      // }
     } catch (e) {
       setError(e.toString());
     } finally {
@@ -31,18 +23,6 @@ class AuthOtpController extends AutoDisposeNotifier<AuthOtpState> {
   }) async {
     try {
       state = state.copyWith(loading: true, error: null);
-
-      // final (token, message) = await OtpService.verifyOtp(
-      //   email: state.email!,
-      //   otp: otp,
-      //   isPasswordReset: state.school == null,
-      // );
-      //
-      // if (token == null) {
-      //   setError(message);
-      // }
-      //
-      // return token != null;
       return true;
     } catch (e) {
       setError(e.toString());

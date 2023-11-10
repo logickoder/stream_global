@@ -15,21 +15,6 @@ class AuthScreenController extends AutoDisposeNotifier<AuthScreenState> {
     required AuthScreenType type,
   }) async {
     try {
-      // state = state.copyWith(loading: true, error: null);
-      // final (success, message) = switch (type) {
-      //   AuthScreenType.login => await UserService.login(
-      //     identifier: email!,
-      //     password: password,
-      //   ),
-      //   AuthScreenType.register => await UserService.createAccount(
-      //     username: username!,
-      //     password: password,
-      //   ),
-      // };
-      // if (!success) {
-      //   setError(message);
-      // }
-      // return success;
       return true;
     } catch (e) {
       setError(e.toString());

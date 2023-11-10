@@ -22,28 +22,7 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
   final _form = GlobalKey<FormState>();
 
   @override
-  void initState() {
-    Future.delayed(Duration.zero, () {
-      // final user = ref.read(profileController).user;
-      // if (user == null) return;
-      //
-      // _username.text = user.username;
-    });
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    // final user = ModalRoute.of(context)?.settings.arguments as User?;
-    // if (user != null) {
-    //   _username.text = user.username;
-    //   _zodiacSign.text = user.zodiacSign ?? '';
-    //   _about.text = user.about ?? '';
-    //   _schoolLevel.text = user.schoolLevel ?? '';
-    //   _ageRange.text = user.ageRange ?? '';
-    //   _gender.text = user.gender ?? '';
-    // }
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Edit Profile'),
@@ -58,13 +37,9 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
               alignment: Alignment.center,
               child: Consumer(
                 builder: (context, ref, child) {
-                  // final oldImage = ref.read(
-                  //   profileController
-                  //       .select((value) => value.user?.profilePicture),
-                  // );
                   final newImage = ref.watch(_image);
                   return GestureDetector(
-                    onTap: _selectPhoto,
+                    onTap: () {},
                     child: FractionallySizedBox(
                       widthFactor: .51,
                       child: Stack(
@@ -132,21 +107,9 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
             const SizedBox(height: AppDimens.secondaryPadding),
             SizedBox(
               width: double.infinity,
-              child: Consumer(
-                builder: (context, ref, child) {
-                  // final loading = ref.watch(
-                  //   profileController.select(
-                  //         (value) => value.editProfileLoading,
-                  //   ),
-                  // );
-                  final loading = false;
-                  return FilledButton(
-                    onPressed: loading ? null : _submitForm,
-                    child: Text(
-                      loading ? 'please wait...' : 'Save Changes',
-                    ),
-                  );
-                },
+              child: FilledButton(
+                onPressed: _submitForm,
+                child: const Text('Save Changes'),
               ),
             )
           ],
@@ -163,32 +126,7 @@ class _EditProfileScreenState extends ConsumerState<EditProfileScreen> {
     super.dispose();
   }
 
-  void _selectPhoto() {
-    // ImagePicker().pickImage(source: ImageSource.gallery).then((image) {
-    //   if (image == null) return;
-    //
-    //   ref.read(_image.notifier).state = image.path;
-    // });
-  }
-
   void _submitForm() {
     if (_form.currentState?.validate() != true) return;
-    // final response = ref.read(profileController.notifier).updateUserProfile(
-    //   username: _username.text,
-    //   zodiacSign: _zodiacSign.text,
-    //   about: _about.text,
-    //   ageRange: _ageRange.text,
-    //   gender: _gender.text,
-    //   schoolLevel: _schoolLevel.text,
-    //   profilePicture: ref.read(_image),
-    // );
-    //
-    // response.then((_) {
-    //   Navigator.pop(context);
-    // }).catchError((e, _) {
-    //   ScaffoldMessenger.of(context).showSnackBar(
-    //     SnackBar(content: Text(e.toString())),
-    //   );
-    // });
   }
 }
