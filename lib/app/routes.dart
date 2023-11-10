@@ -4,6 +4,7 @@ import '../auth/auth_chooser_screen.dart';
 import '../auth/auth_otp_screen.dart';
 import '../auth/auth_screen.dart';
 import '../auth/auth_type.dart';
+import '../dashboard/dashboard_screen.dart';
 import '../onboarding/onboarding_screen.dart';
 import '../splash/splash_screen.dart';
 
@@ -14,6 +15,7 @@ class AppRoutes {
   static const login = '/auth/login';
   static const register = '/auth/register';
   static const otp = '/auth/otp';
+  static const dashboard = '/dashboard';
 
   static Map<String, Widget Function(BuildContext)> get current => {
         splash: (context) => const SplashScreen(),
@@ -22,5 +24,6 @@ class AppRoutes {
         login: (_) => const AuthScreen(),
         register: (_) => const AuthScreen(type: AuthScreenType.register),
         otp: (_) => const AuthOtpScreen(),
+        dashboard: (_) => const DashboardScreen(),
       };
 }

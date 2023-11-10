@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 
 import '../app/assets.dart';
 import '../app/dimens.dart';
+import '../app/routes.dart';
 
 class AuthAccountVerifiedDialog extends StatelessWidget {
   const AuthAccountVerifiedDialog({super.key});
@@ -31,7 +32,7 @@ class AuthAccountVerifiedDialog extends StatelessWidget {
                   child: AspectRatio(
                     aspectRatio: 1,
                     child: SvgPicture.asset(
-                      AppAssets.verified,
+                      AppAssets.verifiedIcon,
                       width: double.infinity,
                     ),
                   ),
@@ -51,7 +52,11 @@ class AuthAccountVerifiedDialog extends StatelessWidget {
                 ),
                 const SizedBox(height: AppDimens.padding),
                 FilledButton(
-                  onPressed: () {},
+                  onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    AppRoutes.dashboard,
+                    (route) => false,
+                  ),
                   style: FilledButton.styleFrom(
                     textStyle: theme.textTheme.bodySmall,
                   ),

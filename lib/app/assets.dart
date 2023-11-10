@@ -7,7 +7,13 @@ class AppAssets {
   static const googleIcon = '$_icons/google.svg';
   static const appleIcon = '$_icons/apple.svg';
   static const otpIcon = '$_icons/otp.svg';
-  static const verified = '$_icons/verified.svg';
+  static const verifiedIcon = '$_icons/verified.svg';
+
+  static const homeIcon = '$_icons/home.svg';
+  static const exploreIcon = '$_icons/explore.svg';
+  static const moreIcon = '$_icons/more.svg';
+  static const radioIcon = '$_icons/radio.svg';
+  static const sermonsIcon = '$_icons/sermons.svg';
 
   /// Images
   static const _images = '$_root/images';
