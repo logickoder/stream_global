@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 
 import '../app/assets.dart';
 import 'home/home_screen.dart';
+import 'more/more_screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -25,7 +26,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           Center(child: Text('Radio')),
           Center(child: Text('Sermons')),
           Center(child: Text('Explore')),
-          Center(child: Text('More')),
+          MoreScreen(),
         ],
       ),
       bottomSheet: _BottomBar(

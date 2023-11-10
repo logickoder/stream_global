@@ -11,6 +11,17 @@ class AppAssets {
   static const playIcon = '$_icons/play.svg';
   static const musicIcon = '$_icons/music.svg';
 
+  static const editIcon = '$_icons/edit.svg';
+  static const donateIcon = '$_icons/donate.svg';
+  static const helpIcon = '$_icons/help.svg';
+  static const settingIcon = '$_icons/setting.svg';
+  static const bookmarkIcon = '$_icons/bookmark.svg';
+  static const notificationIcon = '$_icons/notification.svg';
+  static const infoIcon = '$_icons/info.svg';
+  static const logoutIcon = '$_icons/logout.svg';
+  static const historyIcon = '$_icons/history.svg';
+  static const downloadIcon = '$_icons/download.svg';
+
   static const homeIcon = '$_icons/home.svg';
   static const exploreIcon = '$_icons/explore.svg';
   static const moreIcon = '$_icons/more.svg';
