@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+import 'app/routes.dart';
+import 'app/theme.dart';
 
 void main() {
   runApp(const MainApp());
@@ -9,12 +13,18 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+    final theme = AppTheme.current(context);
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarColor: theme.scaffoldBackgroundColor,
+        statusBarIconBrightness: Brightness.dark,
       ),
+    );
+    return MaterialApp(
+      title: 'Stream Global',
+      theme: theme,
+      routes: AppRoutes.current,
+      debugShowCheckedModeBanner: false,
     );
   }
 }
